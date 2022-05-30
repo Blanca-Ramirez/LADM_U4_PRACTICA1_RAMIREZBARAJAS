@@ -43,6 +43,13 @@ class MainActivity : AppCompatActivity() {
 
         setTitle("Blanca Ramirez Barajas PRACTICA 1")
 
+        AlertDialog.Builder(this)
+            .setTitle("Instrucciones")
+            .setMessage("Para seleccionar los mensajes que desea guardar de click en la lista y posteriormente en aceptar.\n\n" +
+                    "Para eliminar un elemento seleccionado de click y posteriormente en eliminar.")
+            .setNeutralButton("Aceptar") { _, _ ->
+            }.show()
+
         databaseHelper = DataBaseHelper()
 
         val query = databaseHelper.databaseReference
