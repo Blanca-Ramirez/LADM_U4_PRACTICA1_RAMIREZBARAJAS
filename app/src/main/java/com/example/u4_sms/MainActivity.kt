@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        setTitle("Blanca Ramirez Barajas PRACTICA 1")
+
         databaseHelper = DataBaseHelper()
 
         val query = databaseHelper.databaseReference
@@ -215,7 +217,11 @@ class MainActivity : AppCompatActivity() {
 
             this.startActivity(csvIntent)
         } catch (e: java.lang.Exception) {
-            Toast.makeText(this, "Aplicación no encontrada. Asegurese de tener excel instalado", Toast.LENGTH_LONG).show()
+            AlertDialog.Builder(this)
+                .setTitle("Excel no instalado")
+                .setMessage("Aplicación no encontrada. Asegurese de tener EXCEL instalado")
+                .setNeutralButton("Aceptar") { _, _ ->
+                }.show()
             e.printStackTrace()
 
         }
